@@ -1,0 +1,660 @@
+html,
+body,
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Headers */
+header {
+    background-color: #fefefe;
+    border-bottom: 1px solid #f1f1f1;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo_main {
+    width: 80px;
+    padding-left: 20px;
+}
+
+#new_art_alert {
+    padding-right: 20px;
+    height: 2rem;
+    width: 2rem;
+}
+
+.alert_toggle_off {
+    display: none;
+    transition: display 0.5s linear;
+}
+
+.alert_toggle_on {
+    display: block;
+    transition: display 0.5s linear;
+}
+
+
+/* Articles */
+.base {
+    padding: 1em;
+    border-bottom: 1px solid #A0A0A0;
+}
+
+.title {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 1.4em;
+    color: #323232;
+    text-decoration: underline;
+    margin-bottom: 0.5em;
+}
+
+.article_details {
+    display: flex;
+    justify-content: flex-start;
+    align-items: top;
+    margin-bottom: 0.5em;
+
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.post_time {
+
+    font-weight: 400;
+    color: #A0A0A0;
+    font-size: 0.8em;
+}
+
+.web_url {
+    margin-left: 0.5em;
+    font-weight: 400;
+    color: #A0A0A0;
+    font-size: 0.8em;
+    height: 24px;
+}
+
+.alert {
+    margin-right: 0.5em;
+    font-weight: 600;
+    font-size: 0.8em;
+    color: red;
+    height: 24px;
+}
+
+.component_footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.shares {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shares_qty {
+    margin-left: 0.5em;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    color: #A0A0A0;
+    font-size: 0.8em;
+}
+
+.share_button {
+    stroke: #A0A0A0;
+    height: 24px;
+    width: 24px;
+}
+
+.share_button:hover {
+    stroke: #42CDFF;
+}
+
+.emotion_meter {
+    margin-left: 1em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.emotion_meter svg {
+    width: 24px;
+    height: 24px;
+}
+
+.emotion_meter g path {
+    transform-origin: center 12px;
+}
+
+
+
+/*Emotion Components Selectors and Animations */
+/*Joy*/
+.color_meter_rotator_path_joy {
+    fill: #AB9C02;
+}
+
+@keyframes animation_frame_joy {
+    25% {
+        fill: #E8D303;
+    }
+
+    90% {
+        fill: #E8D303;
+    }
+}
+
+@keyframes animation_rotator_joy {
+    25% {
+        fill: #E8D303;
+        transform: rotate(360deg);
+    }
+
+    90% {
+        fill: #E8D303;
+        transform: rotate(360deg);
+    }
+}
+
+.color_meter_container_path_joy:hover .color_meter_frame_path_joy {
+    animation-name: animation_frame_joy;
+    animation-duration: 3s;
+}
+
+.color_meter_container_path_joy:hover .color_meter_rotator_path_joy {
+    animation-name: animation_rotator_joy;
+    animation-duration: 3s;
+}
+
+/*Trust*/
+.color_meter_rotator_path_trust {
+    fill: #6A7C03;
+    transform: rotate(45deg);
+
+}
+
+@keyframes animation_frame_trust {
+    25% {
+        fill: #9BB700;
+    }
+
+    90% {
+        fill: #9BB700;
+    }
+}
+
+@keyframes animation_rotator_trust {
+    25% {
+        fill: #9BB700;
+        transform: rotate(405deg);
+    }
+
+    90% {
+        fill: #9BB700;
+        transform: rotate(405deg);
+    }
+}
+
+.color_meter_container_path_trust:hover .color_meter_frame_path_trust {
+    animation-name: animation_frame_trust;
+    animation-duration: 3s;
+}
+
+.color_meter_container_path_trust:hover .color_meter_rotator_path_trust {
+    animation-name: animation_rotator_trust;
+    animation-duration: 3s;
+}
+
+/*Fear*/
+.color_meter_rotator_path_fear {
+    fill: #396C00;
+    transform: rotate(90deg);
+
+}
+
+@keyframes animation_frame_fear {
+    25% {
+        fill: #509600;
+    }
+
+    90% {
+        fill: #509600;
+    }
+}
+
+@keyframes animation_rotator_fear {
+    25% {
+        fill: #509600;
+        transform: rotate(450deg);
+    }
+
+    90% {
+        fill: #509600;
+        transform: rotate(450deg);
+    }
+}
+
+.color_meter_container_path_fear:hover .color_meter_frame_path_fear {
+    animation-name: animation_frame_fear;
+    animation-duration: 3s;
+}
+
+.color_meter_container_path_fear:hover .color_meter_rotator_path_fear {
+    animation-name: animation_rotator_fear;
+    animation-duration: 3s;
+}
+
+/*Surprise*/
+.color_meter_rotator_path_surprise {
+    fill: #195F55;
+    transform: rotate(135deg);
+
+}
+
+@keyframes animation_frame_surprise {
+    25% {
+        fill: #238779;
+    }
+
+    90% {
+        fill: #238779;
+    }
+}
+
+@keyframes animation_rotator_surprise {
+    25% {
+        fill: #238779;
+        transform: rotate(495deg);
+    }
+
+    90% {
+        fill: #238779;
+        transform: rotate(495deg);
+    }
+}
+
+.color_meter_container_path_surprise:hover .color_meter_frame_path_surprise {
+    animation-name: animation_frame_surprise;
+    animation-duration: 3s;
+}
+
+.color_meter_container_path_surprise:hover .color_meter_rotator_path_surprise {
+    animation-name: animation_rotator_surprise;
+    animation-duration: 3s;
+}
+
+/*Sadness*/
+.color_meter_rotator_path_sadness {
+    fill: #005BA0;
+    transform: rotate(180deg);
+
+}
+
+@keyframes animation_frame_sadness {
+    25% {
+        fill: #007BD8;
+    }
+
+    90% {
+        fill: #007BD8;
+    }
+}
+
+@keyframes animation_rotator_sadness {
+    25% {
+        fill: #007BD8;
+        transform: rotate(540deg);
+    }
+
+    90% {
+        fill: #007BD8;
+        transform: rotate(540deg);
+    }
+}
+
+.color_meter_container_path_sadness:hover .color_meter_frame_path_sadness {
+    animation-name: animation_frame_sadness;
+    animation-duration: 3s;
+}
+
+.color_meter_container_path_sadness:hover .color_meter_rotator_path_sadness {
+    animation-name: animation_rotator_sadness;
+    animation-duration: 3s;
+}
+
+/*Disgust*/
+.color_meter_rotator_path_disgust {
+    fill: #742174;
+    transform: rotate(225deg);
+    /* animation-timing-function: ease-out; */
+}
+
+@keyframes animation_frame_disgust {
+    25% {
+        fill: #9C2C9C;
+    }
+
+    90% {
+        fill: #9C2C9C;
+    }
+}
+
+@keyframes animation_rotator_disgust {
+    25% {
+        fill: #9C2C9C;
+        transform: rotate(585deg);
+    }
+
+    90% {
+        fill: #9C2C9C;
+        transform: rotate(585deg);
+    }
+}
+
+.color_meter_container_path_disgust:hover .color_meter_frame_path_disgust {
+    animation-name: animation_frame_disgust;
+    animation-duration: 3s;
+}
+
+.color_meter_container_path_disgust:hover .color_meter_rotator_path_disgust {
+    animation-name: animation_rotator_disgust;
+    animation-duration: 3s;
+}
+
+/*Rage*/
+.color_meter_rotator_path_rage {
+    fill: #900018;
+    transform: rotate(270deg) translateY(-0.5px) translateX(0.5px);
+
+}
+
+@keyframes animation_frame_rage {
+    25% {
+        fill: #B8001F;
+    }
+
+    90% {
+        fill: #B8001F;
+    }
+}
+
+/* @keyframes animation_rotator_rage {
+    25% {
+        fill: #B8001F;
+        transform: rotate(630deg);
+    }
+
+    90% {
+        fill: #B8001F;
+        transform: rotate(630deg);
+    }
+} */
+
+@keyframes animation_rotator_rage {
+    3% { transform: rotate(290deg) translateY(-0.5px) translateX(0.5px); }
+    6% { transform: rotate(250deg) translateY(-0.5px) translateX(0.5px); }
+    9% { transform: rotate(310deg) translateY(-0.5px) translateX(0.5px); }
+    12% { transform: rotate(230deg) translateY(-0.5px) translateX(0.5px); }
+    15% { transform: rotate(320deg) translateY(-0.5px) translateX(0.5px); }
+    18% { transform: rotate(220deg) translateY(-0.5px) translateX(0.5px); }
+    22% { transform: rotate(290deg) translateY(-0.5px) translateX(0.5px); }
+    25% {
+        fill: #B8001F;
+        transform: rotate(270deg) translateY(-0.5px) translateX(0.5px);
+
+    }
+
+    90% {
+        fill: #B8001F;
+        transform: rotate(270deg) translateY(-0.5px) translateX(0.5px);
+    }
+}
+
+.color_meter_container_path_rage:hover .color_meter_frame_path_rage {
+    animation-name: animation_frame_rage;
+    animation-duration: 3s;
+}
+
+.color_meter_container_path_rage:hover .color_meter_rotator_path_rage {
+    animation-name: animation_rotator_rage;
+    animation-duration: 3s;
+}
+
+/*Interest*/
+.color_meter_rotator_path_interest {
+    fill: #AB3D00;
+    transform: rotate(315deg);
+
+}
+
+@keyframes animation_frame_interest {
+    25% {
+        fill: #F25600;
+    }
+
+    90% {
+        fill: #F25600;
+    }
+}
+
+@keyframes animation_rotator_interest {
+    25% {
+        fill: #F25600;
+        transform: rotate(675deg);
+    }
+
+    90% {
+        fill: #F25600;
+        transform: rotate(675deg);
+    }
+}
+
+.color_meter_container_path_interest:hover .color_meter_frame_path_interest {
+    animation-name: animation_frame_interest;
+    animation-duration: 3s;
+}
+
+.color_meter_container_path_interest:hover .color_meter_rotator_path_interest {
+    animation-name: animation_rotator_interest;
+    animation-duration: 3s;
+}
+
+/* Tooltip */
+.emotion_meter .tooltiptext {
+    opacity: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    margin-left: 0.5em;
+    display: inline-block;
+}
+
+.emotion_meter:hover .tooltiptext {
+    animation-name: animation_tooltip;
+    animation-duration: 3s;
+}
+
+@keyframes animation_tooltip {
+    25% {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    90% {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+/* Tooltip Colors */
+
+.tooltip_joy {
+    color: #E8D303
+}
+
+.tooltip_trust {
+    color: #9BB700
+}
+
+.tooltip_fear {
+    color: #509600
+}
+
+.tooltip_surprise {
+    color: #238779
+}
+
+.tooltip_sadness {
+    color: #007BD8
+}
+
+.tooltip_disgust {
+    color: #9C2C9C
+}
+
+.tooltip_rage {
+    color: #B8001F
+}
+
+.tooltip_interest {
+    color: #F25600
+}
+
+
+/*Syndication*/
+h3, h4 {
+    height: 24px;
+    vertical-align: middle;
+}
+
+.syndication {
+    margin-left: 0.5em;
+}
+.syndicate_data {
+    display: none;
+}
+.syndicate_data p {
+    margin-top: 0.5em;
+    padding-left: 0.5em;
+}
+.synd_button:focus + section {
+    display: block;
+    animation-name: syndication_animation;
+    animation-duration: 1.5s;
+}
+
+.synd_button {
+    border: 0;
+    background-color: white;
+    align-self: center;
+}
+.synd_button:focus {
+    outline:0;
+}
+
+.syndication_medal {
+    width: 24px;
+    height: 24px;
+}
+
+
+.medal_badge, .medal_star {
+    transition: fill 1s;
+}
+.synd_button:hover svg .medal_badge{
+    fill: #5BB0A7;
+}
+.synd_button:hover svg .medal_star {
+    fill: #939393;
+}
+
+.syndicate_approval {
+    margin-top: 0.5em;
+    width: 100px;
+    height: 35px;
+    background-color: #238779;
+    border-radius: 3px;
+    border: 0;
+    color: white;
+    font-size: 1.2rem;
+    font-family: 'Source Sans Pro', sans-serif; 
+}
+.syndicate_approval:hover {
+    background-color: #239e8e;
+}
+.syndicate_approval:focus {
+    outline: 0;
+}
+
+
+@keyframes syndication_animation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/*NavBar*/
+
+nav {
+
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    background-color: #f0efef;
+    border-top: 1px solid #f1f1f1;
+
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#home,
+#alert,
+#menu {
+    height: 24px;
+    width: 24px;
+}
+
+/*Links*/
+a {
+    color: #000;
+}
+
+/*Media Queries*/
+
+@media only screen and (min-device-width : 320px) {
+    nav {
+        display: flex;
+    }
+
+    .spacer {
+        display: block;
+        height: 50px;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-device-width : 480px) {}
+
+@media only screen and (min-device-width : 768px) {}
+
+@media only screen and (min-device-width : 992px) {
+    nav {
+        display: none;
+    }
+
+    .spacer {
+        display: none;
+    }
+}
+
+/* @media only screen and (orientation: landscape) and (max-device-width : 800px) {} */
