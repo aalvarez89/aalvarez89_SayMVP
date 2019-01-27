@@ -15,6 +15,8 @@
 
     <link rel="stylesheet" type="text/css" href="styles/theme.css">
 
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
     <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
 </head>
 
@@ -24,27 +26,6 @@
         <img id="new_art_alert" class="alert_toggle_off" src="images/alert_circle.png" alt="">
     </header>
     <main id="newsfeed">
-        <!--Dummy Article Start
-            <article class="base">
-                <h2 class="title"><a href="#">FBI Arrests Compound Residents On Gun Charges Following Earlier Release</a></h2>
-                <div class="article_details">
-                        <h4 class="alert">Top Story</h4>
-                        <h3 class="post_time">7 mns    &bull; </h3>
-                        <h3 class="web_url">(abcnews.go.com)</h3>
-                </div>
-                <div class="comp_footer">
-                    <section class="shares">
-                            <svg class="share_button" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-                                <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8M16 6l-4-4-4 4M12 2v13" fill="none"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-                              </svg>
-                        <span class="shares_qty">5 shares</span>
-                    </section>
-                    <section class="emotion_meter">
-                            <svg></svg>
-                    </section>
-                </div>
-            </article>
-            <!--Dummy Article End-->
     </main>
     <div class="spacer"></div>
     <nav>
@@ -68,9 +49,25 @@
                   </svg> -->
         </div>
     </nav>
+    <div id="syndication">
+        <div id="syndication_screen"></div>
+        <div id="syndication_panel">
+            <svg id="panel_close" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                <path d="M336.559 68.611L231.016 174.165l105.543 105.549c15.699 15.705 15.699 41.145 0 56.85-7.844 7.844-18.128 11.769-28.407 11.769-10.296 0-20.581-3.919-28.419-11.769L174.167 231.003 68.609 336.563c-7.843 7.844-18.128 11.769-28.416 11.769-10.285 0-20.563-3.919-28.413-11.769-15.699-15.698-15.699-41.139 0-56.85l105.54-105.549L11.774 68.611c-15.699-15.699-15.699-41.145 0-56.844 15.696-15.687 41.127-15.687 56.829 0l105.563 105.554L279.721 11.767c15.705-15.687 41.139-15.687 56.832 0 15.705 15.699 15.705 41.145.006 56.844z" /></svg>
+            <div id="syndication_data">
+                <h5 class="panel_titles">Author</h5>
+                <p id="author_panel"></p>
+                <h5 class="panel_titles">Hash</h5>
+                <p id="hash_panel"></p>
+                <button>Syndicate</button>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Scripts -->
-    <script type="text/javascript" src="scripts/sayscript2.js"></script>
+    <!-- <script type="text/javascript" src="scripts/sayscript2.js"></script> -->
+    <script type="text/javascript" src="scripts/sayscript3_oop.js"></script>
     <!-- End of Scripts -->
 </body>
 

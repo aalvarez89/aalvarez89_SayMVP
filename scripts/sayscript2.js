@@ -2,6 +2,9 @@
     // const virwire_url = 'https://virwire.com/d/urls/SAY';
     const NEWSFEED = document.getElementById('newsfeed');
     const MAINHEADER = document.getElementById('mainheader');
+    const SYNDICATIONWINDOW = document.getElementById('syndication');
+    const SYNDICATIONPANEL = document.getElementById('syndication_panel');
+
 
     //FUNCTIONS:
 
@@ -51,7 +54,7 @@
       let name_array = ['Jimmy', 'John', 'Robert', 'Paul'];
       let l_name_array = ['Plant', 'Page', 'Bonham', 'Jones'];
 
-      let hash_array = ['JT9485TJJ578', '4590T6UI9GDK8', 'DF9JSERTJ89DH', 'SE0R9TGJSERT', 'FDSG0FGJS8DG', 'SD0FGJSDFG9UI9', '0S9DF8G9SDFG', 'S0DFG789SD90FG', 'SD8FG7SD8G', 'ASD8F7ASFGSDF'];
+      let hash_array = ['JT9487b5TJJ578', '4590kT6UI9GDK8', 'DF9JSERfTJ89DH', 'SE0R9TGJSr4ERT', 'FDSvfG0FGJS8DG', 'SD0FGJSDFG9UI9', '0S9DF866G9SDFG', 'S0DFG789SD90FG', 'SD5m8FGr7SDs8G', 'ASD8F7A9SFGSDF'];
  
       if (random_variable === 1) {
         let syndication_dom = 
@@ -80,8 +83,7 @@
       })
       .then(function (data) {
         window.dataObj.current = data;
-
-        
+        console.log(data[0]);
 
 
         window.dataObj.current.forEach(element => {
@@ -126,6 +128,19 @@
           </div>`;
 
           NEWSFEED.appendChild(new_article);
+          
+          $('.synd_button').click( (e)=> {
+            // $('#syndication_panel').text(e)
+            $('#syndication').css('visibility', 'visible');
+
+            console.log(e.target.id);
+          });
+
+          $('#panel_close').click( () => {
+            $('#syndication').css('visibility', 'hidden');
+            console.log('off')
+          });
+          
 
         });
         window.dataObj.uniqueIdArray = window.dataObj.uniqueIdArray.sort((x, y) => x - y);
@@ -219,7 +234,7 @@
           });
           console.log(window.dataObj.store.length);
         } else {
-          console.log('Article not found');
+          // console.log('Article not found');
         }
       })
   }, (10 /*Seconds*/ * 1000));

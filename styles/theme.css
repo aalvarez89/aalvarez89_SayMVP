@@ -536,7 +536,7 @@ h3, h4 {
 .syndicate_data {
     display: none;
 }
-.syndicate_data p {
+/* .syndicate_data p {
     margin-top: 0.5em;
     padding-left: 0.5em;
 }
@@ -544,7 +544,7 @@ h3, h4 {
     display: block;
     animation-name: syndication_animation;
     animation-duration: 1.5s;
-}
+} */
 
 .synd_button {
     border: 0;
@@ -601,6 +601,27 @@ h3, h4 {
 }
 
 
+#syndication_data {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-content: center;
+    align-content: center;
+    /* grid-area: "author authorname"
+               "hash hashnumber"
+               "button button"; */
+}
+#syndication_data button {
+    grid-column: span 2;
+}
+#author_panel {
+ /* grid-area: authorname; */
+}
+#hash_panel{
+ /* grid-area: hashnumber; */
+}
+
 /*NavBar*/
 
 nav {
@@ -627,6 +648,44 @@ nav {
 /*Links*/
 a {
     color: #000;
+}
+
+#syndication {
+    /* visibility: visible; */
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
+#syndication_screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #444;
+    opacity: 0.3;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+
+}
+#syndication_panel {
+    position: relative;
+    z-index: 2;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%);
+    height: 20rem;
+    width: 30rem;
+    background-color: white;
+    opacity: 1;
+}
+
+#panel_close {
+    width: 24px;
+    height: 24px;
 }
 
 /*Media Queries*/
